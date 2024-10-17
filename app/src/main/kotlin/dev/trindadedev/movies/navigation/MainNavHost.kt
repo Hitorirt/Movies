@@ -41,7 +41,7 @@ fun MainNavHost() {
             HomeScreen(
                 onMovieClicked = { movie ->
                     Log.d("MainNavHost", movie.toString())
-                    //navController.navigateSingleTop(DetailsRoute(movie))
+                    navController.navigateSingleTop(DetailsRoute(movie))
                 }
             )
         }
@@ -51,9 +51,11 @@ fun MainNavHost() {
                 typeOf<Movie>() to CustomNavType(Movie::class.java, Movie.serializer())
             )
         ) {
+            Log.d("MainNavHost::DetailsRoute", it.toString())
             val route: DetailsRoute = it.toRoute()
-
+            Log.d("MainNavHost::DetailsRoute", route.toString())
             DetailsScreen(movie = route.movie)
+            Log.d("MainNavHost::DetailsRoute", route.movie.toString())
         }
     }
 }
