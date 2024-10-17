@@ -7,9 +7,15 @@ import androidx.compose.ui.res.stringResource
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopBar(
-    title: @Composable.() -> Unit,
-    scrollBehavior: TopAppBarScrollBehavior
-) = TopAppBar(
+    title: @Composable () -> Unit,
+    scrollBehavior: TopAppBarScrollBehavior,
+    navigationIcon: @Composable (() -> Unit)? = null,
+    actions: @Composable RowScope.() -> Unit = {}
+) {
+    TopAppBar(
         title = title,
+        navigationIcon = navigationIcon,
+        actions = actions,
         scrollBehavior = scrollBehavior,
     )
+}
