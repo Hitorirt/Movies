@@ -53,7 +53,7 @@ fun MainNavHost() {
                 )
         ) {
             val route: DetailsRoute = it.toRoute()
-            DetailsScreen(movie = route)
+            DetailsScreen(movie = route.movie)
         }
     }
 }
