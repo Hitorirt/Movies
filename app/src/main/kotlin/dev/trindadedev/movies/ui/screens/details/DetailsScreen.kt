@@ -10,11 +10,14 @@ import androidx.compose.ui.layout.*
 import androidx.compose.ui.input.nestedscroll.*
 
 import dev.trindadedev.movies.Strings
+import dev.trindadedev.movies.mv.models.Movie
 import dev.trindadedev.movies.ui.components.TopBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailsScreen() {
+fun DetailsScreen(
+    movie: Movie
+) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     val scrollState = rememberScrollState()
     
