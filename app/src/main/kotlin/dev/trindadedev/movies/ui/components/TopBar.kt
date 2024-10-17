@@ -15,7 +15,7 @@ fun TopBar(
     TopAppBar(
         title = title,
         navigationIcon = {
-            navigationIcon?let {
+            navigationIcon?.let {
                 it()
             }
         },
