@@ -5,9 +5,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 
+import dev.trindadedev.movies.mv.models.Movie
 import dev.trindadedev.movies.platform.LocalMainNavController
 import dev.trindadedev.movies.navigation.routes.HomeRoute
 import dev.trindadedev.movies.ui.screens.home.HomeScreen
+import dev.trindadedev.movies.ui.screens.details.DetailsScreen
 import dev.trindadedev.movies.ui.animations.navigation.NavigationAnimationTransitions
 
 import kotlin.reflect.typeOf
@@ -33,7 +35,21 @@ fun MainNavHost() {
         }
     ) {
         composable<HomeRoute> {
-            HomeScreen()
+            HomeScreen(
+                onMovieClicked = { movie ->
+                    navController.navigate(DetailsRoute(movie))
+                }
+            )
+        }
+        
+        composable<DetailsRoute>(
+            typeMap = mapOf(
+                typeOf<Movie>() to CustomNavType(Movie::class.java, Movie.serializer())
+            )
+        ) {
+            val route: DetailsRoute = it.toRoute()
+
+            DetailsScreen(movie = route.movie)
         }
     }
 }
