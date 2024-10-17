@@ -27,7 +27,7 @@ fun DetailsScreen(
             TopBar(
                 title = {
                     Text(stringResource(id = Strings.label_details))
-                }
+                },
                 scrollBehavior = scrollBehavior
             ) 
         }
