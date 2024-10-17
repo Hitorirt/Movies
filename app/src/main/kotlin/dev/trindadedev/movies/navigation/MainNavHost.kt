@@ -40,7 +40,7 @@ fun MainNavHost() {
         composable<HomeRoute> {
             HomeScreen(
                 onMovieClicked = { movie ->
-                    Log.d("MainNavHost", movie)
+                    Log.d("MainNavHost", movie.toString())
                     //navController.navigateSingleTop(DetailsRoute(movie))
                 }
             )
