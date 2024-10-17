@@ -8,6 +8,7 @@ import androidx.navigation.toRoute
 import dev.trindadedev.movies.mv.models.Movie
 import dev.trindadedev.movies.platform.LocalMainNavController
 import dev.trindadedev.movies.navigation.routes.*
+import dev.trindadedev.movies.extensions.navigation.navigateSingleTop
 import dev.trindadedev.movies.ui.screens.home.HomeScreen
 import dev.trindadedev.movies.ui.screens.details.DetailsScreen
 import dev.trindadedev.movies.ui.animations.navigation.NavigationAnimationTransitions
@@ -37,7 +38,7 @@ fun MainNavHost() {
         composable<HomeRoute> {
             HomeScreen(
                 onMovieClicked = { movie ->
-                    navController.navigate(DetailsRoute(movie))
+                    navController.navigateSingleTop(DetailsRoute(movie))
                 }
             )
         }
