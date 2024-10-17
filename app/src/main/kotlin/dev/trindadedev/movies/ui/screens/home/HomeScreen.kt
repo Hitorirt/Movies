@@ -30,7 +30,7 @@ fun HomeScreen(
             TopBar(
                 title = {
                     Text(stringResource(id = Strings.app_name))
-                }
+                },
                 scrollBehavior = scrollBehavior
             ) 
         }

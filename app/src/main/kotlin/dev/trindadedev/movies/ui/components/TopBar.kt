@@ -14,7 +14,11 @@ fun TopBar(
 ) {
     TopAppBar(
         title = title,
-        navigationIcon = navigationIcon,
+        navigationIcon = {
+            navigationIcon?let {
+                it()
+            }
+        },
         actions = actions,
         scrollBehavior = scrollBehavior,
     )
