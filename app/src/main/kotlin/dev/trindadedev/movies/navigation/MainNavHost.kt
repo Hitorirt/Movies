@@ -40,22 +40,20 @@ fun MainNavHost() {
         composable<HomeRoute> {
             HomeScreen(
                 onMovieClicked = { movie ->
-                    Log.d("MainNavHost", movie.toString())
                     navController.navigateSingleTop(DetailsRoute(movie))
                 }
             )
         }
         
         composable<DetailsRoute>(
-            typeMap = mapOf(
-                typeOf<Movie>() to CustomNavType(Movie::class.java, Movie.serializer())
-            )
+            typeMap =
+                mapOf(
+                    typeOf<Movie>() to
+                        CustomNavType(Movie::class.java, Movie.serializer())
+                )
         ) {
-            Log.d("MainNavHost::DetailsRoute", it.toString())
             val route: DetailsRoute = it.toRoute()
-            Log.d("MainNavHost::DetailsRoute", route.toString())
             DetailsScreen(movie = route.movie)
-            Log.d("MainNavHost::DetailsRoute", route.movie.toString())
         }
     }
 }
