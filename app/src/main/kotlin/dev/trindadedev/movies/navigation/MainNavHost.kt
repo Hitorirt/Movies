@@ -1,5 +1,7 @@
 package dev.trindadedev.movies.navigation
 
+import android.util.Log
+
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -38,7 +40,8 @@ fun MainNavHost() {
         composable<HomeRoute> {
             HomeScreen(
                 onMovieClicked = { movie ->
-                    navController.navigateSingleTop(DetailsRoute(movie))
+                    Log.d("MainNavHost", movie)
+                    //navController.navigateSingleTop(DetailsRoute(movie))
                 }
             )
         }
