@@ -1,17 +1,23 @@
 [versions]
+# Android Gradle Plugin
 agp = "8.7.1"
+
+# Kotlin & KotlinX
 kotlin = "2.0.21"
+kotlinx-serialization-json = "1.7.3"
 
-
+# Android
 android-jvm = "17"
 android-compileSdk = "34"
 android-targetSdk = "34"
 android-minSdk = "26"
 
+# AndroidX
 androidx-core-splashscreen = "1.0.1"
 androidx-core-ktx = "1.13.1"
 androidx-lifecycle-runtime-ktx = "2.8.6"
 
+# Compose
 compose-bom = "2024.10.00"  
 compose-activity = "1.9.3"
 compose-navigation = "2.8.3"
@@ -19,9 +25,10 @@ compose-material-motion = "2.0.1"
 compose-material-icons = "1.7.4"
 compose-viewmodel = "2.8.6"
 
-kotlin-serialization-json = "1.7.3"
-
 coil-kt = "3.0.0-rc01"
+
+# Google
+google-gson = "2.11.0"
 
 [plugins]
 # Android Gradle Plugin
@@ -60,5 +67,8 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 # AndroidX KTX
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidx-lifecycle-runtime-ktx" }
 
+# Google 
+google-gson = { group = "com.google.code.gson", name = "gson", version.ref ="google-gson" }
+
 # JetBrains KTX
-kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlin-serialization-json" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }

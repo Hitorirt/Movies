@@ -77,4 +77,6 @@ dependencies {
     implementation(libs.coil.network.okhttp)
     
     implementation(libs.kotlinx.serialization.json)
+    
+    implementation(libs.google.gson)
 }
