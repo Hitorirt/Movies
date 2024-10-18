@@ -47,7 +47,7 @@ fun MainNavHost() {
         
         composable<DetailsRoute>(
             typeMap = mapOf(
-                typeOf<Movie> to CustomNavType.MovieType
+                typeOf<Movie>() to CustomNavType.MovieType
             )
         ) {
             val args = it.toRoute<DetailsRoute>()
