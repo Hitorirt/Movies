@@ -46,14 +46,14 @@ fun MainNavHost() {
         }
         
         composable<DetailsRoute>(
-            typeMap =
-                mapOf(
-                    typeOf<Movie>() to
-                        CustomNavType(Movie::class.java, Movie.serializer())
-                )
+            typeMap = mapOf(
+                typeOf<Movie> to CustomNavType.MovieType
+            )
         ) {
-            val route: DetailsRoute = it.toRoute()
-            DetailsScreen(movie = route.movie)
+            val args = it.toRoute<DetailsRoute>()
+            DetailsScreen(
+                movie = args.movie
+            )
         }
     }
 }
